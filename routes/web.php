@@ -12,13 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
-
 
 Route::prefix('holly')->group(function()
 {
     Route::get('/', function () {   return view('index');   });
-    Route::get('/comprar', function () {    return view('comprar'); });
+    Route::get('/comprar', function () {    return view('comprar'); })->name('comprar');
+    Route::get('/login', function () {    return view('clientes.login'); })->name('entrar');
+    Route::get('/nova Conta', function () {    return view('clientes.novaConta'); })->name('nova conta');
+    Route::get('/Recuperar senha', function () {    return view('clientes.recuperarSenha'); })->name('recuperar senha');
+    Route::get('/Duvidas', function () {    return view('clientes.faq'); })->name('duvidas');
     
 });
